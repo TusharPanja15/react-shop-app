@@ -1,0 +1,49 @@
+$red_button: red;
+$white_button: white;
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .card__actions {
+    @apply p-4 text-center;
+
+    button,
+    a {
+      @apply mx-0 my-1 w-[150px];
+    }
+  }
+  
+  .btn {
+    // display: inline-block;
+    // padding: 0.25rem 1rem;
+    text-decoration: none;
+    // font: inherit;
+    border: 1px solid #00695c;
+    // color: #00695c;
+    // background: $white_button;
+    // cursor: pointer;
+    @apply text-[#00695c] bg-white cursor-pointer from-inherit px-4 py-1 inline-block
+      transition-all duration-300 ease-linear
+      hover:text-white hover:bg-[#00695c] hover:border-[#00695c] hover:rounded-xl;
+
+    // &:hover,
+    // &:active {
+    //   // background-color: #00695c;
+    //   color: $white_button;
+    //   @apply rounded-3xl transition-all duration-300 ease-linear;
+    // }
+
+    &.danger {
+      color: $red_button;
+      border-color: $red_button;
+    }
+
+    &.danger:hover,
+    &.danger:active {
+      background: $red_button;
+      color: $white_button;
+    }
+  }
+}

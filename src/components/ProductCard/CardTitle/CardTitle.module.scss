@@ -1,0 +1,20 @@
+@mixin card__content_margin {
+  @apply m-1;
+}
+
+@mixin card__content_padding {
+  @apply p-1;
+}
+
+.card__header {
+  @include card__content_padding;
+
+  h1 {
+    @include card__content_margin;
+  }
+}
+
+.product__title {
+  @apply text-center font-semibold;
+  font-size: 1.3rem;
+}

@@ -1,0 +1,46 @@
+@mixin card__content_margin {
+  margin: 0;
+}
+
+@mixin card__content_padding {
+  padding: 1rem;
+}
+
+@mixin theme-colors($theme) {
+  @if $theme == "light" {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.664);
+    background-color: rgb(255, 255, 255);
+  } @else {
+    box-shadow: 0 2px 8px rgb(255, 255, 255);
+    background-color: rgb(41, 45, 62);
+    color: white;
+  }
+}
+
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: stretch;  
+}
+
+.card {
+  @include theme-colors(light);
+}
+
+.product-item {
+  width: 20rem;
+  max-width: 95%;
+  margin: 1rem;
+}
+
+.card__header,
+.card__content {
+  h1,
+  h2,
+  p {
+    @include card__content_margin;
+  }
+
+  @include card__content_padding;
+}
